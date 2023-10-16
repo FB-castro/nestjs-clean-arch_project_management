@@ -1,0 +1,23 @@
+
+estrutura do projeto - gestão de projetos
+
+
+criar projeto - data - inicio - fim
+criar tarefas - inicio - fim
+
+
+Criar módulo para cuidar da tarefa //nest generate resources
+
+ESTUDAR SOBRE
+class UpdateProductUseCase{
+    
+    execute (id: string, input: {name, description, price }) {
+        const product = this.productRepo.findById(id);
+
+        input.name && (product.changeName(input.name));
+        input.description && (product.changeDescription(input.description));
+        input.price && (product.changePrice(input.price));
+
+        this.productRepo.update(product);
+    }
+ }
